@@ -1,5 +1,5 @@
 package edu.temple.cis.c3238.banksim;
-
+import java.util.concurrent.locks.ReentrantLock;
 /**
  * @author Cay Horstmann
  * @author Modified by Paul Wolfgang
@@ -10,6 +10,7 @@ public class Account {
     private volatile int balance;
     private final int id;
     private final Bank myBank;
+    public ReentrantLock lock = new ReentrantLock();
 
     public Account(Bank myBank, int id, int initialBalance) {
         this.myBank = myBank;
